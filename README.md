@@ -40,8 +40,8 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 
 | Day    | Topic                    | Key Labs                |   Documentation   |
 | :----- | :----------------------- | :---------------------- | :---------------: |
-| **01** | Introduction to DevOps   | SDLC & Roles            |  [Link](./Day01)  |
-| **02** | SDLC & Environments      | DevOps Culture          |  [Link](./Day02)  |
+| **01** | Introduction to DevOps   | SDLC & Roles            | [Day 01](./Day01) |
+| **02** | SDLC & Environments      | DevOps Culture          | [Day 02](./Day02) |
 | **03** | Virtualization & AWS EC2 | Manual EC2 Provisioning | [Day 03](./Day03) |
 | **04** | Cloud Connectivity       | SSH & Instance Connect  | [Day 04](./Day04) |
 | **05** | Linux Basics             | _Upcoming_              |        ⏳         |
