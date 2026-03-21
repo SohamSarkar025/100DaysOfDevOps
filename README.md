@@ -38,13 +38,18 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 
 ## 🗺️ Roadmap & Progress Tracker
 
-| Day    | Topic                    | Key Labs                |   Documentation   |
-| :----- | :----------------------- | :---------------------- | :---------------: |
-| **01** | Introduction to DevOps   | SDLC & Roles            | [Day 01](./Day01) |
-| **02** | SDLC & Environments      | DevOps Culture          | [Day 02](./Day02) |
-| **03** | Virtualization & AWS EC2 | Manual EC2 Provisioning | [Day 03](./Day03) |
-| **04** | Cloud Connectivity       | SSH & Instance Connect  | [Day 04](./Day04) |
-| **05** | Linux Basics             | _Upcoming_              |        ⏳         |
+| Day | Topic                      | Key Labs                    |   Documentation   |
+| :-- | :------------------------- | :-------------------------- | :---------------: |
+| 01  | Introduction to DevOps     | SDLC & Roles                | [Day 01](./Day01) |
+| 02  | SDLC & Environments        | DevOps Culture              | [Day 02](./Day02) |
+| 03  | Virtualization & AWS EC2   | Manual EC2 Provisioning     | [Day 03](./Day03) |
+| 04  | Cloud Connectivity         | SSH & Instance Connect      | [Day 04](./Day04) |
+| 05  | Linux Architecture         | Shell Hierarchy & Commands  | [Day 05](./Day05) |
+| 06  | Advanced Linux & Scripting | `nodeHealth.sh` Automation  | [Day 06](./Day06) |
+| 07  | AWS CLI & FinOps           | Zero-Console EC2 Lifecycle  | [Day 07](./Day07) |
+| 08  | Git Fundamentals           | VCS & Distributed Logic     | [Day 08](./Day08) |
+| 09  | Git Branching Strategy     | Real-World Workflows (Uber) | [Day 09](./Day09) |
+| 10  | Git Merge & Rebase         | _Upcoming..._               |        ⌛         |
 
 ---
 
