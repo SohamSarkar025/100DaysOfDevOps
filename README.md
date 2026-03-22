@@ -49,7 +49,8 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 | 07  | AWS CLI & FinOps           | Zero-Console EC2 Lifecycle  | [Day 07](./Day07) |
 | 08  | Git Fundamentals           | VCS & Distributed Logic     | [Day 08](./Day08) |
 | 09  | Git Branching Strategy     | Real-World Workflows (Uber) | [Day 09](./Day09) |
-| 10  | Git Merge & Rebase         | _Upcoming..._               |        ⌛         |
+| 10  | Advanced Git Workflows     | Remotes & Cherry-Picking    | [Day 10](./Day10) |
+| 11  | Git Conflict Management    | Merge vs. Rebase Logic      |        ⌛         |
 
 ---
 
