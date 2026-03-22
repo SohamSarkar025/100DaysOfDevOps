@@ -21,35 +21,34 @@ In DevOps, the local repository is a sandbox, but the **Remote (GitHub)** is the
 
 ---
 
-## 🛠️ Hands-on Lab: Connectivity & Surgery
+## 🛠️ Hands-on Lab: From Connectivity to Surgery
 
 ### 1. Initializing & Linking Remotes
 
 I initialized the repository and practiced the "Handshake" with GitHub. I encountered and resolved the `fatal: No configured push destination` error—a critical learning moment for understanding how Git tracks remote branches.
 
 **Lab Evidence:**
-
-- **Initialization:** `git-init.png`
-- **First Sync:** `git-remote-git-push.png`
+| Git Initialization | Remote Add & First Push |
+| :---: | :---: |
+| ![Init](./assets/git-init.png) | ![Remote](./assets/git-remote-git-push.png) |
 
 ### 2. Feature Branching & Auditing
 
 To maintain a stable `main` branch, I practiced **Feature Isolation**. By using `git branch`, I developed new logic without risking the production code. I used the `--oneline` flag to manage commit hashes efficiently.
 
 **Lab Evidence:**
-
-- **Branch Management:** `git-branch.png`
-- **History Audit:** `git-log-oneline.png`
+| Feature Branching | Git Log Audit |
+| :---: | :---: |
+| ![Branch](./assets/git-branch.png) | ![Log](./assets/git-log-oneline.png) |
 
 ### 3. Advanced Strategy: Cherry-Picking
 
 This was the most advanced part of the lab. Instead of a standard merge (which brings all changes), I used `git cherry-pick` to grab only the **Add Division** logic from my feature branch and move it to `main`. This is essential for pushing hotfixes in a production environment.
 
 **Lab Evidence:**
-
-- **Pre-Merge State:** `before-merge.png`
-- **Successful Surgery:** `cherry-pick-merge.png`
-- **Final Cloud Sync:** `git-push-after-cherry-pick.png`
+| Pre-Merge State | Cherry-Pick & Merge Success | Final Cloud Sync |
+| :---: | :---: | :---: |
+| ![Before](./assets/before-merge.png) | ![Surgical](./assets/cherry-pick-merge.png) | ![Cloud Sync](./assets/git-push-after-cherry-pick.png) |
 
 ---
 
