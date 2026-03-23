@@ -25,15 +25,15 @@ I explored the two primary ways to incorporate feature work into the main codeba
 I deliberately created a conflict in my `sample.txt` file by modifying the same lines on different branches. I manually edited the file to remove Git's markers (`<<<<<<<`, `=======`, `>>>>>>>`) and finalized the integration.
 
 **Lab Evidence:**
-* **Merge Success:** ![Merge Resolution](./assets/Screenshot(157).png)
-* **Branch Audit:** ![Branch Management](./assets/Screenshot(160).png)
+* **Merge Success:** ![Merge Resolution](./assets/merge-conflict.png)
+* **Branch Audit:** ![Branch Management](./assets/main-branch-log.png)
 
 ### 2. Mastering the Linear History (Rebase)
 To achieve a professional-grade log, I used `git rebase` to move my development commits. This eliminated the "spaghetti" history and created a single, traceable line of progress.
 
 **Lab Evidence:**
-* **Rebase Commits:** ![Rebase Process](./assets/Screenshot(158).png)
-* **Linear Log Result:** ![Linear History](./assets/Screenshot(161).png)
+* **Rebase Process:** ![Rebase Process](./assets/rebase-diff.png)
+* **Linear Log Result:** ![Linear History](./assets/linear-history.png)
 
 ### 3. "Time Travel" & Troubleshooting (Reset & Force)
 I practiced recovering from mistakes using `git reset --hard`.
