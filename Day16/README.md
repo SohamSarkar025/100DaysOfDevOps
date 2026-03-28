@@ -15,7 +15,7 @@ Before IaC, managing hundreds of servers meant writing manual scripts for each. 
 * **Azure:** Azure Resource Manager (ARM)
 * **OpenStack:** Heat Templates
 
-![IaC Evolution](./assets/Screenshot(181).jpg)
+![IaC Evolution](./assets/Screenshot(181).png)
 *Visualizing the transition from manual scripting to automated cloud-specific templates.*
 
 ---
@@ -23,7 +23,7 @@ Before IaC, managing hundreds of servers meant writing manual scripts for each. 
 ### 2. Solving the Hybrid Cloud Challenge
 Large organizations often use a **Hybrid Cloud** strategy—combining AWS, Azure, and On-premise data centers. Managing different tools for each cloud is inefficient. Terraform provides a **Unified Workflow** to manage them all.
 
-![Hybrid Cloud Strategy](./assets/Screenshot(182).jpg)
+![Hybrid Cloud Strategy](./assets/Screenshot(182).png)
 *How Terraform acts as the single source of truth for diverse infrastructure across providers.*
 
 ---
@@ -31,7 +31,7 @@ Large organizations often use a **Hybrid Cloud** strategy—combining AWS, Azure
 ### 3. Terraform: The "API as Code" Engine
 Terraform doesn't just "click buttons" for you; it communicates directly with **Cloud APIs**. It translates HashiCorp Configuration Language (HCL) into API calls that cloud providers understand.
 
-![Terraform API Workflow](./assets/Screenshot(183).jpg)
+![Terraform API Workflow](./assets/Screenshot(183).png)
 *The architecture showing how Terraform interacts with AWS, Azure, and GCP APIs via providers.*
 
 ---
@@ -39,7 +39,7 @@ Terraform doesn't just "click buttons" for you; it communicates directly with **
 ### 4. Modules & Scalability
 I learned how Terraform uses **Modules** to manage complex resources like EC2, VPCs, and Databases. This modularity allows DevOps engineers to reuse code and scale infrastructure effortlessly.
 
-![Terraform Modules](./assets/Screenshot(184).jpg)
+![Terraform Modules](./assets/Screenshot(184).png)
 *Breaking down infrastructure into reusable, manageable, and version-controlled code blocks.*
 
 ---
