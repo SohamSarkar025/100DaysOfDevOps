@@ -1,6 +1,6 @@
 ![Progress](https://img.shields.io/badge/Progress-15%25-orange?style=for-the-badge&logo=progress)
 
-# 📂 Day 14: Ansible Ad-hoc Commands, Playbooks & Roles
+# 📂 Day 12: Ansible Ad-hoc Commands, Playbooks & Roles
 
 ## 📖 Overview
 On Day 15, I transitioned from basic connectivity to actual infrastructure management. I explored the hierarchy of Ansible execution—moving from quick one-liner **Ad-hoc commands** to structured **YAML Playbooks** and understanding the scalability of **Ansible Roles**.
