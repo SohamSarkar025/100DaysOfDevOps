@@ -8,29 +8,21 @@ On Day 17, I moved from theory to practical implementation of **Infrastructure a
 
 ---
 
-## 🛠️ Windows Installation Guide
-
-1. **Download:** 64-bit binary from HashiCorp.
-2. **Path Setup:** Added `C:\terraform` to System Environment Variables.
-3. **Verify:** Checked via `terraform --version`.
-
----
-
 ## 🏗️ Lab Execution Steps
 
 ### 1. The Configuration (`main.tf`)
 
-![Main Configuration](<./assets/Screenshot(188).png>)
+![Main Configuration](<./assets/Screenshot%20(188).png>)
 
 ### 2. Initialization & Planning
 
-![Initialization](<./assets/Screenshot(189).png>)
-![Execution Plan](<./assets/Screenshot(190).png>)
+![Initialization](<./assets/Screenshot%20(189).png>)
+![Execution Plan](<./assets/Screenshot%20(190).png>)
 
 ### 3. Deployment & Verification
 
-![AWS Console Verification](<./assets/Screenshot(193).png>)
-![Application Complete](<./assets/Screenshot(194).png>)
+![AWS Console Verification](<./assets/Screenshot%20(193).png>)
+![Application Complete](<./assets/Screenshot%20(194).png>)
 
 ---
 
@@ -38,8 +30,8 @@ On Day 17, I moved from theory to practical implementation of **Infrastructure a
 
 I used `outputs.tf` to fetch the **Instance ID** and **Public IP** directly in the terminal.
 
-![Outputs Configuration](<./assets/Screenshot(196).png>)
-![Terminal Output Result](<./assets/Screenshot(197).png>)
+![Outputs Configuration](<./assets/Screenshot%20(196).png>)
+![Terminal Output Result](<./assets/Screenshot%20(197).png>)
 
 ---
 
@@ -49,7 +41,7 @@ I used `outputs.tf` to fetch the **Instance ID** and **Public IP** directly in t
 
 The state file is the **Single Source of Truth**. Without it, Terraform cannot track your infrastructure.
 
-![Terraform Problems](<./assets/Screenshot(201).jpg>)
+![Terraform Problems](./assets/terraform-problems.png)
 _Understanding the limitations and critical role of the state file._
 
 ### 2. Best Practices for State Management
@@ -58,13 +50,13 @@ _Understanding the limitations and critical role of the state file._
 - **State Locking:** Use DynamoDB.
 - **Isolation:** Reduce the "Blast Radius".
 
-![State File Best Practices](./assets/state-file-best-practices.jpg)
+![State File Best Practices](./assets/state-file-best-practices.png)
 
 ### 3. The Ideal Terraform Architecture
 
 A professional setup involving CI/CD pipelines and remote backends.
 
-![Ideal Terraform Setup](./assets/ideal-terraform-setup.jpg)
+![Ideal Terraform Setup](./assets/ideal-terraform-setup.png)
 
 ---
 
