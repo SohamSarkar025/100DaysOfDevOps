@@ -29,7 +29,7 @@ As seen in Screenshot (205) and (206), Containers are "Lightweight" because they
 - **Speed:** They start in seconds!
 
 ![Container vs VM Comparison](<./assets/Screenshot%20(205).png>)
-![Resource Efficiency](<./assets/Screenshot%20(206).jpg>)
+![Resource Efficiency](<./assets/Screenshot%20(206).png>)
 
 ---
 
