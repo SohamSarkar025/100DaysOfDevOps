@@ -44,6 +44,9 @@ I mastered the core lifecycle of a Dockerized application (Screenshot 207 & 208)
 ![Docker Lifecycle](<./assets/Screenshot%20(207).png>)
 ![Docker Engine Architecture](<./assets/Screenshot%20(208).png>)
 
+![Soham's Custom VM vs Container Diagram](./assets/VM-vs-Container-Architecture.jpeg)
+_Unified Architectural Analysis: Comparing Virtual Machine (Heavyweight) vs Container (Lightweight) design._
+
 ---
 
 ## 📊 Quick Comparison Table
