@@ -18,7 +18,7 @@ In my study of Screenshot (204), I learned that VMs are "Heavyweight."
 - **Resource Wastage:** If a VM is allocated 8GB RAM but uses only 2GB, the rest is locked and wasted.
 - **Slow Boot:** Initializing a full OS takes minutes.
 
-![VM Architecture Analysis](<./assets/Screenshot%20(204).jpg>)
+![VM Architecture Analysis](<./assets/Screenshot%20(204).png>)
 
 ### 2. The Solution: Docker Containers
 
@@ -28,7 +28,7 @@ As seen in Screenshot (205) and (206), Containers are "Lightweight" because they
 - **Efficiency:** They only package the application, libraries, and dependencies.
 - **Speed:** They start in seconds!
 
-![Container vs VM Comparison](<./assets/Screenshot%20(205).jpg>)
+![Container vs VM Comparison](<./assets/Screenshot%20(205).png>)
 ![Resource Efficiency](<./assets/Screenshot%20(206).jpg>)
 
 ---
@@ -41,8 +41,8 @@ I mastered the core lifecycle of a Dockerized application (Screenshot 207 & 208)
 2. **Docker Image:** The static, executable package created after running `docker build`.
 3. **Docker Container:** The final running instance of an image created via `docker run`.
 
-![Docker Lifecycle](<./assets/Screenshot%20(207).jpg>)
-![Docker Engine Architecture](<./assets/Screenshot%20(208).jpg>)
+![Docker Lifecycle](<./assets/Screenshot%20(207).png>)
+![Docker Engine Architecture](<./assets/Screenshot%20(208).png>)
 
 ---
 
