@@ -50,7 +50,15 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 | 08  | Git Fundamentals           | VCS & Distributed Logic     | [Day 08](./Day08) |
 | 09  | Git Branching Strategy     | Real-World Workflows (Uber) | [Day 09](./Day09) |
 | 10  | Advanced Git Workflows     | Remotes & Cherry-Picking    | [Day 10](./Day10) |
-| 11  | Git Conflict Management    | Merge vs. Rebase Logic      |        ⌛         |
+| 11 | Git Conflict Management | Merge vs. Rebase Logic | [Day 11](./Day11/) |
+| 12 | AWS DevOps Essentials | Top 15 AWS Services Mapping | [Day 12](./Day12/) |
+| 13 | Configuration Management | Ansible Fundamentals & Idempotency | [Day 13](./Day13/) |
+| 14 | Ansible Setup | SSH Passwordless Authentication | [Day 14](./Day14/) |
+| 15 | Ansible Advanced | Ad-hoc Commands, Playbooks & Roles | [Day 15](./Day15/) |
+| 16 | Infrastructure as Code (IaC) | Terraform Architecture & Evolution | [Day 16](./Day16/) |
+| 17 | Terraform Practical | Provisioning EC2 & State Management | [Day 17](./Day17/) |
+| 18 | Docker Introduction | Virtualization vs. Containerization | [Day 18](./Day18/) |
+| 19 | Docker Hands-on | Image Building & Docker Hub Push | [Day 19](./Day19/) |
 
 ---
 
