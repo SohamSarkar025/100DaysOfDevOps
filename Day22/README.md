@@ -49,10 +49,11 @@ docker run -d --mount source=Soham,target=/app nginx:latest
 
 ```
 
-[Docker Commands](<./assets/Screenshot%20(245).png>)
+![Docker Commands](<./assets/Screenshot%20(245).png>)
 
 Detailed JSON output showed the volume `Soham` successfully mounted to the destination `/app`.
-[Docker Container Inspect](<./assets/Screenshot%20(244).png>)
+
+![Docker Container Inspect](<./assets/Screenshot%20(244).png>)
 
 ### 🔍 Deep Dive: How Data Survives
 
