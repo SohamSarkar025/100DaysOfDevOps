@@ -57,7 +57,7 @@ I tried to ping the container in `secure-network` from a container in the defaul
 Result: 100% Packet Loss.
 
 <img src="assets/Screenshot (256).png" alt="Ping failed across networks"/>
-
+<img src="assets/Screenshot (257).png" alt="Overlay network diagram"/>
 Learning: Containers on different networks cannot communicate by default, providing a strong layer of security for databases or internal APIs.
 
 ## Other Network Modes
@@ -75,8 +75,6 @@ Note: This reduces isolation and should be used with caution for specific high-p
 ### Overlay Networking
 
 Used in Docker Swarm or multi-host environments to enable communication between containers running on different physical machines.
-
-<img src="assets/Screenshot (257).png" alt="Overlay network diagram"/>
 
 ## Key Takeaways
 
