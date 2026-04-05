@@ -49,9 +49,3 @@ Quick reference of common Docker interview questions and concise answers.
     - Set resource limits (CPU/memory) to prevent noisy-neighbor issues.
 
 ---
-
-If you want, I can also:
-
-- add this as `Day24/README.md` file (done),
-- commit it and run a quick spell-check,
-- or convert it to a printable PDF.
