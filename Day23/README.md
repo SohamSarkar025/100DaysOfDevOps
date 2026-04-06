@@ -1,3 +1,5 @@
+![Progress](https://img.shields.io/badge/Progress-23%25-orange?style=for-the-badge&logo=docker)
+
 # Day 23: Docker Networking — Isolation & Connectivity Lab
 
 ## Overview
