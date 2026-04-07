@@ -10,7 +10,7 @@ Today's focus was the internal mechanics of a Kubernetes Cluster. Understanding 
 
 Below is the visual breakdown of the Kubernetes components I mastered today:
 
-![Kubernetes Architecture Deep Dive](./assets/k8s-architecture-day26.jpg)
+![Kubernetes Architecture Deep Dive](./assets/k8s-architecture-day26.jpeg)
 
 ---
 
