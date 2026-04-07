@@ -6,6 +6,12 @@
 
 Today's focus was the internal mechanics of a Kubernetes Cluster. Understanding how the **Master Node** communicates with **Worker Nodes** via the **API Server** and **Kubelet** is essential for troubleshooting production-grade clusters.
 
+## 🏗️ The Cluster Architecture
+
+Below is the visual breakdown of the Kubernetes components I mastered today:
+
+![Kubernetes Architecture Deep Dive](./assets/k8s-architecture-day26.jpg)
+
 ---
 
 ## 🏗️ The Cluster Blueprint
