@@ -1,6 +1,6 @@
 ![Progress](https://img.shields.io/badge/Progress-31%25-green?style=for-the-badge&logo=kubernetes)
 
-# 🚀 Day 31: Mastering Kubernetes Networking & Observability [Service Deep Dive]
+# 🚀 Day 31: Mastering Kubernetes Networking & Observability
 
 ## 📌 Overview
 
