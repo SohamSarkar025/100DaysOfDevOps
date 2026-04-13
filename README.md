@@ -38,27 +38,39 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 
 ## 🗺️ Roadmap & Progress Tracker
 
-| Day | Topic                      | Key Labs                    |   Documentation   |
-| :-- | :------------------------- | :-------------------------- | :---------------: |
-| 01  | Introduction to DevOps     | SDLC & Roles                | [Day 01](./Day01) |
-| 02  | SDLC & Environments        | DevOps Culture              | [Day 02](./Day02) |
-| 03  | Virtualization & AWS EC2   | Manual EC2 Provisioning     | [Day 03](./Day03) |
-| 04  | Cloud Connectivity         | SSH & Instance Connect      | [Day 04](./Day04) |
-| 05  | Linux Architecture         | Shell Hierarchy & Commands  | [Day 05](./Day05) |
-| 06  | Advanced Linux & Scripting | `nodeHealth.sh` Automation  | [Day 06](./Day06) |
-| 07  | AWS CLI & FinOps           | Zero-Console EC2 Lifecycle  | [Day 07](./Day07) |
-| 08  | Git Fundamentals           | VCS & Distributed Logic     | [Day 08](./Day08) |
-| 09  | Git Branching Strategy     | Real-World Workflows (Uber) | [Day 09](./Day09) |
-| 10  | Advanced Git Workflows     | Remotes & Cherry-Picking    | [Day 10](./Day10) |
-| 11 | Git Conflict Management | Merge vs. Rebase Logic | [Day 11](./Day11/) |
-| 12 | AWS DevOps Essentials | Top 15 AWS Services Mapping | [Day 12](./Day12/) |
-| 13 | Configuration Management | Ansible Fundamentals & Idempotency | [Day 13](./Day13/) |
-| 14 | Ansible Setup | SSH Passwordless Authentication | [Day 14](./Day14/) |
-| 15 | Ansible Advanced | Ad-hoc Commands, Playbooks & Roles | [Day 15](./Day15/) |
-| 16 | Infrastructure as Code (IaC) | Terraform Architecture & Evolution | [Day 16](./Day16/) |
-| 17 | Terraform Practical | Provisioning EC2 & State Management | [Day 17](./Day17/) |
-| 18 | Docker Introduction | Virtualization vs. Containerization | [Day 18](./Day18/) |
-| 19 | Docker Hands-on | Image Building & Docker Hub Push | [Day 19](./Day19/) |
+| Day    | Topic                        | Key Labs                                        |   Documentation    |
+| :----- | :--------------------------- | :---------------------------------------------- | :----------------: |
+| 01     | Introduction to DevOps       | SDLC & Roles                                    | [Day 01](./Day01)  |
+| 02     | SDLC & Environments          | DevOps Culture                                  | [Day 02](./Day02)  |
+| 03     | Virtualization & AWS EC2     | Manual EC2 Provisioning                         | [Day 03](./Day03)  |
+| 04     | Cloud Connectivity           | SSH & Instance Connect                          | [Day 04](./Day04)  |
+| 05     | Linux Architecture           | Shell Hierarchy & Commands                      | [Day 05](./Day05)  |
+| 06     | Advanced Linux & Scripting   | `nodeHealth.sh` Automation                      | [Day 06](./Day06)  |
+| 07     | AWS CLI & FinOps             | Zero-Console EC2 Lifecycle                      | [Day 07](./Day07)  |
+| 08     | Git Fundamentals             | VCS & Distributed Logic                         | [Day 08](./Day08)  |
+| 09     | Git Branching Strategy       | Real-World Workflows (Uber)                     | [Day 09](./Day09)  |
+| 10     | Advanced Git Workflows       | Remotes & Cherry-Picking                        | [Day 10](./Day10)  |
+| 11     | Git Conflict Management      | Merge vs. Rebase Logic                          | [Day 11](./Day11/) |
+| 12     | AWS DevOps Essentials        | Top 15 AWS Services Mapping                     | [Day 12](./Day12/) |
+| 13     | Configuration Management     | Ansible Fundamentals & Idempotency              | [Day 13](./Day13/) |
+| 14     | Ansible Setup                | SSH Passwordless Authentication                 | [Day 14](./Day14/) |
+| 15     | Ansible Advanced             | Ad-hoc Commands, Playbooks & Roles              | [Day 15](./Day15/) |
+| 16     | Infrastructure as Code (IaC) | Terraform Architecture & Evolution              | [Day 16](./Day16/) |
+| 17     | Terraform Practical          | Provisioning EC2 & State Management             | [Day 17](./Day17/) |
+| 18     | Docker Introduction          | Virtualization vs. Containerization             | [Day 18](./Day18/) |
+| 19     | Docker Hands-on              | Image Building & Docker Hub Push                | [Day 19](./Day19/) |
+| **20** | **Docker Advanced**          | Multi-stage Builds & Advanced Dockerfiles       | [Day 20](./Day20)  |
+| **21** | **Image Optimization**       | Distroless Images & Reducing Attack Surface     | [Day 21](./Day21)  |
+| **22** | **Docker Storage**           | Mastering Volumes, Bind Mounts & Persistence    | [Day 22](./Day22)  |
+| **23** | **Docker Networking**        | Bridge, Host, Overlay & Custom Networks         | [Day 23](./Day23)  |
+| **24** | **Docker Orchestration**     | Docker Compose Architecture & Microservices     | [Day 24](./Day24)  |
+| **25** | **K8s Intro**                | Cluster Architecture & Control Plane Components | [Day 25](./Day25)  |
+| **26** | **K8s Objects**              | Pods Lifecycle & YAML Manifest Standards        | [Day 26](./Day26)  |
+| **27** | **K8s Provisioning**         | Multi-node Cluster setup using KOPS on AWS      | [Day 27](./Day27)  |
+| **28** | **K8s Workloads**            | Static Pods & Imperative vs Declarative Config  | [Day 28](./Day28)  |
+| **29** | **K8s Controllers**          | ReplicaSets & Deployment Strategies (Rolling)   | [Day 29](./Day29)  |
+| **30** | **K8s Networking**           | ClusterIP, NodePort & LoadBalancer Services     | [Day 30](./Day30)  |
+| **31** | **K8s Observability**        | Advanced Services & eBPF-based Monitoring       | [Day 31](./Day31)  |
 
 ---
 
