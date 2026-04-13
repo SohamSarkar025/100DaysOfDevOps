@@ -15,7 +15,7 @@ In a vanilla Kubernetes setup, using a **LoadBalancer** service for every applic
 - **The Problem:** 100 services = 100 Cloud LoadBalancers (High cost + 100 different IPs).
 - **The Solution:** **Ingress** acts as a single, smart gateway for the entire cluster, routing traffic based on Hostnames and Paths.
 
-![The Problem with LoadBalancer Services](<assets/Screenshot%20(373).jpg>)
+![The Problem with LoadBalancer Services](<assets/Screenshot%20(373).png>)
 _Figure: Analyzing the expense and management complexity of multiple LoadBalancer services._
 
 ---
@@ -30,7 +30,7 @@ A crucial concept I mastered is the separation of concerns:
 ### 🛠️ Lab: Enabling the Controller
 
 I activated the Nginx Ingress Controller on Minikube and verified the pods.
-![Enabling Nginx Controller](<assets/Screenshot%20(404).jpg>)
+![Enabling Nginx Controller](<assets/Screenshot%20(404).png>)
 _Screenshot: Enabling the ingress addon and verifying the Nginx controller pod._
 
 ---
@@ -43,7 +43,7 @@ Ingress brings advanced Layer 7 capabilities that standard services lack:
 - **Host-based Routing:** `api.example.com` vs `web.example.com`.
 - **Security:** Handling TLS/SSL Termination at the gateway level.
 
-![Enterprise Features](<assets/Screenshot%20(375).jpg>)
+![Enterprise Features](<assets/Screenshot%20(375).png>)
 _Figure: Deep dive into enterprise ingress features (Sticky sessions, Path/Domain routing)._
 
 ---
@@ -52,7 +52,7 @@ _Figure: Deep dive into enterprise ingress features (Sticky sessions, Path/Domai
 
 I wrote an `ingress.yml` to route traffic for `foo.bar.com`. By using a **Catch-all Path (`/`)**, I ensured my backend Django application could handle its internal sub-routes like `/demo/`.
 
-![Ingress YAML Configuration](<assets/Screenshot%20(409).jpg>)
+![Ingress YAML Configuration](<assets/Screenshot%20(409).png>)
 _Screenshot: My Ingress Resource YAML with foo.bar.com and path prefix configuration._
 
 ---
@@ -64,7 +64,7 @@ Since Minikube on Windows 11 uses an isolated Docker network, I implemented two 
 1. **Local DNS Hijacking:** Updated `C:\Windows\System32\drivers\etc\hosts` to map `127.0.0.1` to `foo.bar.com`.
 2. **Minikube Tunnel:** Bridged host ↔ cluster traffic.
 
-![Ingress Resource Status](<assets/Screenshot%20(407).jpg>)
+![Ingress Resource Status](<assets/Screenshot%20(407).png>)
 _Screenshot: Verifying the Ingress resource has been assigned the cluster IP._
 
 ---
@@ -74,7 +74,7 @@ _Screenshot: Verifying the Ingress resource has been assigned the cluster IP._
 By following the packet flow from my browser, through the Nginx Ingress Controller, and finally to the Pod, I successfully loaded the application via the custom domain.
 
 **The Victory Screen:**
-![Application accessed via foo.bar.com](<assets/Screenshot%20(408).jpg>)
+![Application accessed via foo.bar.com](<assets/Screenshot%20(408).png>)
 _Final Success: The Python web app rendered perfectly via foo.bar.com/demo/._
 
 ---
@@ -84,7 +84,7 @@ _Final Success: The Python web app rendered perfectly via foo.bar.com/demo/._
 - **Logs Inspection:** I monitored the Ingress Controller logs to verify backend reloads and sync status.
 - **Key Takeaway:** Understanding the difference between Infrastructure Errors (Nginx 404) and Application Errors (Django 404) is critical for SREs.
 
-![Ingress Controller Logs](<assets/Screenshot%20(406).jpg>)
+![Ingress Controller Logs](<assets/Screenshot%20(406).png>)
 _Screenshot: Deep-dive into Nginx controller logs for real-time traffic analysis._
 
 ---
