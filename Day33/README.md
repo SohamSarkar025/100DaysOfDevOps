@@ -14,6 +14,13 @@ Security is paramount in any production cluster. Today’s focus: Role-Based Acc
 
 RBAC allows you to define and enforce permissions in Kubernetes. It ensures, for example, that a junior developer cannot delete the `kube-system` namespace.
 
+## The RBAC Architecture (Visual Guide)
+
+To understand the complete security flow—from authentication via External IDPs to authorization via Roles—I've mapped out the entire process in this diagram:
+
+![Kubernetes RBAC Architecture](assets/kubernetes-rbac.jpeg)
+_Figure: Deep dive into the K8s Security Gatekeeper - Authentication vs Authorization._
+
 ## 2. Users vs Service Accounts
 
 - **Users:** Real humans (admins, developers) authenticated via external systems (IdP, cloud IAM).
