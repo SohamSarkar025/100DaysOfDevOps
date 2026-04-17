@@ -14,7 +14,7 @@ Monitoring is the heartbeat of any production environment. Today, I implemented 
 
 Before diving into the terminal, I studied the architecture of Prometheus. It operates on a **Pull Model**—it actively scrapes targets (like nodes and pods) for metrics, stores them in a Time-Series Database (TSDB), and allows visualization tools like Grafana to query this data.
 
-![Prometheus Architecture](<assets/Screenshot%20(528).jpg>)
+![Prometheus Architecture](<assets/Screenshot%20(528).png>)
 _Architecture: How Service Discovery, TSDB, Pushgateway, Alertmanager, and Grafana interact._
 
 ---
@@ -110,14 +110,14 @@ Instead of building everything from scratch, I leveraged Grafana's community das
 ![Grafana Import ID](<assets/Screenshot%20(520).png>)
 _Grafana: Loading a dashboard via the official JSON model ID `3662`._
 
-![Grafana Import Details](<assets/Screenshot%20(519).jpg>)
+![Grafana Import Details](<assets/Screenshot%20(519).png>)
 _Grafana: Configuring the data source and UID for the imported dashboard._
 
 ### The Final Visualization
 
 With the dashboard loaded, my cluster metrics were instantly transformed into actionable visual insights!
 
-![Grafana Dashboard Live](<assets/Screenshot%20(523).jpg>)
+![Grafana Dashboard Live](<assets/Screenshot%20(523).png>)
 _Dashboard: Live visualization showing active metrics, memory usage, and scrape statistics._
 
 ---
