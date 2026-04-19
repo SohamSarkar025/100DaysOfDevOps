@@ -8,7 +8,7 @@
 
 Yesterday, I manually deployed a web server on an AWS EC2 instance. While that works for a single page, it is completely unscalable for enterprise environments. Today, I dove deep into the architectural theory of **CI/CD (Continuous Integration & Continuous Delivery/Deployment)** and how tools like **Jenkins** act as the automation engine for modern software delivery.
 
-## ![Full CI/CD Ecosystem](assets/CICD-Pipeline-e1613664546213.jpg)
+## ![Full CI/CD Ecosystem](assets/CICD-Pipeline-e1613664546213.png)
 
 ## 🏢 1. The Enterprise Problem: Why CI/CD?
 
