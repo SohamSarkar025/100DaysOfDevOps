@@ -26,17 +26,17 @@ A reliable pipeline needs a reliable server. I started by launching a dedicated 
 
 I deployed an Ubuntu 24.04 LTS instance (`t2.micro`) to serve as our Jenkins Master node.
 
-![EC2 Instance](<assets/Screenshot%20(572).jpg>)
+![EC2 Instance](<assets/Screenshot%20(572).png>)
 _Infrastructure: Launching the Ubuntu 24.04 server on AWS._
 
 ### 2. Network Security Groups
 
 Jenkins operates on port `8080` by default. I configured the AWS Security Group to allow standard web traffic (HTTP/HTTPS), SSH for terminal access, and a custom TCP rule for port 8080.
 
-![Security Group 1](<assets/Screenshot%20(573).jpg>)
+![Security Group 1](<assets/Screenshot%20(573).png>)
 _Networking: Enabling SSH (Port 22) and HTTPS (Port 443)._
 
-![Security Group 2](<assets/Screenshot%20(574).jpg>)
+![Security Group 2](<assets/Screenshot%20(574).png>)
 _Networking: Explicitly opening Custom TCP Port 8080 for the Jenkins UI._
 
 Jenkins is a Java-based application. Before installing Jenkins, the server must have the correct Java Runtime Environment.
@@ -54,10 +54,10 @@ With Java ready, I proceeded to add the official Jenkins repository, securely ma
 
 Linux requires package repositories to be securely signed. I followed the official Jenkins documentation to securely download the 2023 GPG key and add the debian-stable repository.
 
-![Jenkins Docs 1](<assets/Screenshot%20(600).jpg>)
+![Jenkins Docs 1](<assets/Screenshot%20(600).png>)
 _Documentation: Consulting official Jenkins guides for Java LTS recommendations._
 
-![Jenkins Docs 2](<assets/Screenshot%20(601).jpg>)
+![Jenkins Docs 2](<assets/Screenshot%20(601).png>)
 _Security: Executing the exact commands to import the `jenkins-keyring.asc` file._
 
 ### 5. Package Installation
@@ -87,14 +87,14 @@ _Security: Reading the `initialAdminPassword` file from the `/var/lib/jenkins/se
 
 Navigating to `http://<EC2-PUBLIC-IP>:8080`, I was greeted by the Unlock screen where I inputted the retrieved password.
 
-![Unlock Jenkins](<assets/Screenshot%20(578).jpg>)
+![Unlock Jenkins](<assets/Screenshot%20(578).png>)
 _Access: The initial security gate for the Jenkins Master._
 
 ### 9. Installing Plugins
 
 To get a fully functional environment out-of-the-box, I opted to install the suggested plugins, which include critical tools for Git integration, Pipeline creation, and user management.
 
-![Plugin Selection](<assets/Screenshot%20(579).jpg>)
+![Plugin Selection](<assets/Screenshot%20(579).png>)
 _Configuration: Selecting the "Install suggested plugins" pathway._
 
 ![Plugin Installation](<assets/Screenshot%20(581).png>)
