@@ -20,6 +20,86 @@ _(Reference GitHub for full AWS EC2 & Security Group provisioning screenshots)_
 
 ---
 
+A reliable pipeline needs a reliable server. I started by launching a dedicated EC2 instance.
+
+### 1. EC2 Instance Setup
+
+I deployed an Ubuntu 24.04 LTS instance (`t2.micro`) to serve as our Jenkins Master node.
+
+![EC2 Instance](<assets/Screenshot%20(572).jpg>)
+_Infrastructure: Launching the Ubuntu 24.04 server on AWS._
+
+### 2. Network Security Groups
+
+Jenkins operates on port `8080` by default. I configured the AWS Security Group to allow standard web traffic (HTTP/HTTPS), SSH for terminal access, and a custom TCP rule for port 8080.
+
+![Security Group 1](<assets/Screenshot%20(573).jpg>)
+_Networking: Enabling SSH (Port 22) and HTTPS (Port 443)._
+
+![Security Group 2](<assets/Screenshot%20(574).jpg>)
+_Networking: Explicitly opening Custom TCP Port 8080 for the Jenkins UI._
+
+Jenkins is a Java-based application. Before installing Jenkins, the server must have the correct Java Runtime Environment.
+
+### 3. Java Installation
+
+I updated the package lists and installed `openjdk-17-jdk`, which is the recommended Long-Term Support (LTS) version for modern Jenkins installations.
+
+![Java Setup](<assets/Screenshot%20(575).png>)
+_Dependencies: Successfully installing OpenJDK 17 on the Ubuntu server._
+
+With Java ready, I proceeded to add the official Jenkins repository, securely manage its GPG keys, and install the package.
+
+### 4. The GPG Key Configuration
+
+Linux requires package repositories to be securely signed. I followed the official Jenkins documentation to securely download the 2023 GPG key and add the debian-stable repository.
+
+![Jenkins Docs 1](<assets/Screenshot%20(600).jpg>)
+_Documentation: Consulting official Jenkins guides for Java LTS recommendations._
+
+![Jenkins Docs 2](<assets/Screenshot%20(601).jpg>)
+_Security: Executing the exact commands to import the `jenkins-keyring.asc` file._
+
+### 5. Package Installation
+
+By correctly importing the key and adding the repository, the package manager successfully fetched and unpacked Jenkins.
+
+![Jenkins Install](<assets/Screenshot%20(576).png>)
+_Execution: Downloading and unpacking Jenkins version 2.555.1 without any errors._
+
+### 6. Service Verification
+
+Post-installation, I started the Jenkins systemd service and verified its status to ensure it was actively running and listening for connections.
+
+![Service Status](<assets/Screenshot%20(577).png>)
+_Verification: `sudo systemctl status jenkins` confirming an 'active (running)' state._
+
+The final step was accessing the Jenkins web console to unlock it and install the foundational plugins.
+
+### 7. Retrieving the Admin Password
+
+Jenkins generates a secure initial password during installation. I retrieved this from the terminal.
+
+![Admin Password](<assets/Screenshot%20(580).png>)
+_Security: Reading the `initialAdminPassword` file from the `/var/lib/jenkins/secrets/` directory._
+
+### 8. Unlocking the Dashboard
+
+Navigating to `http://<EC2-PUBLIC-IP>:8080`, I was greeted by the Unlock screen where I inputted the retrieved password.
+
+![Unlock Jenkins](<assets/Screenshot%20(578).jpg>)
+_Access: The initial security gate for the Jenkins Master._
+
+### 9. Installing Plugins
+
+To get a fully functional environment out-of-the-box, I opted to install the suggested plugins, which include critical tools for Git integration, Pipeline creation, and user management.
+
+![Plugin Selection](<assets/Screenshot%20(579).jpg>)
+_Configuration: Selecting the "Install suggested plugins" pathway._
+
+![Plugin Installation](<assets/Screenshot%20(581).png>)
+_Setup Wizard: Jenkins automatically fetching and installing core community plugins._
+
 ## ⚙️ Phase 2: Jenkins Installation & Admin Setup
 
 After securely importing the official Jenkins GPG keys and configuring the `debian-stable` apt repository, I successfully installed and verified the Jenkins service.
