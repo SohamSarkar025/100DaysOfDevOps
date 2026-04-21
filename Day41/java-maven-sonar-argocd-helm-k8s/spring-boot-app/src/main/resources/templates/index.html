@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitOps CI/CD Deployment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .hero-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        .dynamic-msg {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .tech-badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .icon-java { color: #f89820; }
+        .icon-jenkins { color: #d33833; }
+        .icon-docker { color: #2496ed; }
+        .icon-k8s { color: #326ce5; }
+        .icon-argocd { color: #ef7b4d; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark border-bottom border-secondary">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-rocket me-2 text-info"></i>Soham's DevOps Lab</a>
+        <span class="badge bg-success">Day 40: End-to-End GitOps</span>
+    </div>
+</nav>
+
+<main class="hero-section">
+    <div class="glass-card">
+        <div class="mb-4">
+            <i class="fa-solid fa-circle-check text-success" style="font-size: 4rem;"></i>
+        </div>
+
+        <h1 class="gradient-text" th:text="${title}">Ultimate CI/CD Pipeline Deployed!</h1>
+
+        <p class="dynamic-msg" th:text="${msg}">This application has been successfully built with Maven, analyzed by SonarQube, containerized with Docker, and deployed via ArgoCD to Kubernetes.</p>
+
+        <hr class="border-secondary my-4">
+
+        <p class="text-uppercase tracking-wider text-muted small fw-bold mb-3">Live Architecture Flow</p>
+
+        <div class="tech-stack">
+            <div class="tech-badge"><i class="fa-brands fa-java icon-java fs-5"></i> Spring Boot</div>
+            <div class="tech-badge"><i class="fa-brands fa-jenkins icon-jenkins fs-5"></i> CI/CD</div>
+            <div class="tech-badge"><i class="fa-brands fa-docker icon-docker fs-5"></i> Docker</div>
+            <div class="tech-badge"><i class="fa-solid fa-ship icon-argocd fs-5"></i> ArgoCD</div>
+            <div class="tech-badge"><i class="fa-solid fa-dharmachakra icon-k8s fs-5"></i> Kubernetes</div>
+        </div>
+    </div>
+</main>
+
+<footer class="text-center py-3 text-secondary small">
+    &copy; 2026 | 100 Days of DevOps Journey by Soham Sarkar
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
