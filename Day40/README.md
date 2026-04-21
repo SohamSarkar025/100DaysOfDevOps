@@ -27,10 +27,10 @@ To truly understand the system, I broke it down into three distinct phases: **Co
 
 The CI phase is entirely responsible for validating the code and packaging it.
 
-![Declarative CI Flow](<assets/Screenshot%20(609).jpg>)
+![Declarative CI Flow](<assets/Screenshot%20(609).png>)
 _Flow: Webhooks trigger a Declarative Jenkinsfile. The pipeline executes Maven builds, runs Unit Tests, and performs SAST (Static Application Security Testing)._
 
-![CI Quality Gates](<assets/Screenshot%20(605).jpg>)
+![CI Quality Gates](<assets/Screenshot%20(605).png>)
 _Quality Gates: If SonarQube detects vulnerabilities, the build fails and Slack/Email notifications are sent. If it passes, the Docker Image is built._
 
 ---
@@ -39,10 +39,10 @@ _Quality Gates: If SonarQube detects vulnerabilities, the build fails and Slack/
 
 Once the CI pipeline creates the Docker Image, it needs to be handed over to the deployment phase. We **never** deploy directly from Jenkins to Kubernetes. Instead, we use an intermediary strategy.
 
-![Tagging Strategy](<assets/Screenshot%20(606).jpg>)
+![Tagging Strategy](<assets/Screenshot%20(606).png>)
 _Versioning: The Docker image is tagged (e.g., `v1.0.1`) and pushed to a registry. This new tag must now be updated in our Kubernetes deployment manifests._
 
-![Image Registry to CD](<assets/Screenshot%20(611).jpg>)
+![Image Registry to CD](<assets/Screenshot%20(611).png>)
 _The Bridge: Pushing to ECR/DockerHub/Quay triggers an Image Updater, which edits the `deployment.yaml` in a separate Manifests Git Repository._
 
 ---
@@ -51,10 +51,10 @@ _The Bridge: Pushing to ECR/DockerHub/Quay triggers an Image Updater, which edit
 
 The most secure way to deploy to Kubernetes is using the **GitOps pull model**. Instead of Jenkins pushing to the cluster, tools like ArgoCD sit inside the cluster and monitor the Manifest Repository.
 
-![ArgoCD Flow](<assets/Screenshot%20(608).jpg>)
+![ArgoCD Flow](<assets/Screenshot%20(608).png>)
 _GitOps Repository: A dedicated repository containing `pod.yaml`, `deploy.yaml`, and `service.yaml` (or Helm Charts). ArgoCD constantly watches this repo._
 
-![High Level GitOps](<assets/Screenshot%20(613).jpg>)
+![High Level GitOps](<assets/Screenshot%20(613).png>)
 _The Pull Model: When the Image Updater commits the new tag to the Manifest repo, ArgoCD detects the drift and automatically pulls the new state into the Kubernetes cluster._
 
 ---
