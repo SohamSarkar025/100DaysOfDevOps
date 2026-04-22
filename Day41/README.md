@@ -147,63 +147,63 @@ minikube service spring-boot-app-service --url
 ### 1. The Final Result: Live Application 🌐
 
 Successfully deployed the Spring Boot application, accessible via the Minikube service.
-![Live Website Home](<Screenshot%20(664).png>)
-![Final Deployment Success](<Screenshot%20(653).png>)
+![Live Website Home](<assets/Screenshot%20(664).png>)
+![Final Deployment Success](<assets/Screenshot%20(653).png>)
 
 ### 2. Infrastructure & Environment Setup 💻
 
 Provisioning AWS EC2 and configuring the essential security groups for traffic management.
-![AWS EC2 Instance Details](<Screenshot%20(621).png>)
-![Security Group Inbound Rules](<Screenshot%20(623).png>)
-![Initial Environment Setup via Terminal](<Screenshot%20(622).png>)
-![Minikube & OLM Setup](<Screenshot%20(642).png>)
+![AWS EC2 Instance Details](<assets/Screenshot%20(621).png>)
+![Security Group Inbound Rules](<assets/Screenshot%20(623).png>)
+![Initial Environment Setup via Terminal](<assets/Screenshot%20(622).png>)
+![Minikube & OLM Setup](<assets/Screenshot%20(642).png>)
 
 ### 3. Static Code Analysis (SonarQube) 🔍
 
 Detailed setup and troubleshooting of the SonarQube service.
-![SonarQube Download](<Screenshot%20(627).png>)
-![SonarQube Extraction & Installation](<Screenshot%20(628).png>)
-![Starting the SonarQube Service](<Screenshot%20(629).png>)
-![Fixing SonarQube Runtime Issues](<Screenshot%20(634).png>)
-![SonarQube Status Verification](<Screenshot%20(632).png>)
-![SonarQube UI Loading](<Screenshot%20(633).png>)
-![SonarQube Project Passed](<Screenshot%20(652).png>)
+![SonarQube Download](<assets/Screenshot%20(627).png>)
+![SonarQube Extraction & Installation](<assets/Screenshot%20(628).png>)
+![Starting the SonarQube Service](<assets/Screenshot%20(629).png>)
+![Fixing SonarQube Runtime Issues](<assets/Screenshot%20(634).png>)
+![SonarQube Status Verification](<assets/Screenshot%20(632).png>)
+![SonarQube UI Loading](<assets/Screenshot%20(633).png>)
+![SonarQube Project Passed](<assets/Screenshot%20(652).png>)
 
 ### 4. Continuous Integration (Jenkins) ⚙️
 
 Configuring Jenkins plugins, pipeline credentials, and GitHub integrations.
-![Jenkins Plugin Management](<Screenshot%20(631).png>)
-![GitHub Source Integration](<Screenshot%20(625).png>)
-![Jenkins Pipeline Script Configuration](<Screenshot%20(624).png>)
-![Console Output: Pipeline Start](<Screenshot%20(650).png>)
-![Final Success Log](<Screenshot%20(651).png>)
+![Jenkins Plugin Management](<assets/Screenshot%20(631).png>)
+![GitHub Source Integration](<assets/Screenshot%20(625).png>)
+![Jenkins Pipeline Script Configuration](<assets/Screenshot%20(624).png>)
+![Console Output: Pipeline Start](<assets/Screenshot%20(650).png>)
+![Final Success Log](<assets/Screenshot%20(651).png>)
 
 ### 5. Secure Credential Management 🔐
 
 Managing secrets for DockerHub and GitHub Personal Access Tokens (PAT).
-![GitHub Token Generation](<Screenshot%20(646).png>)
-![GitHub Token Permissions](<Screenshot%20(647).png>)
-![Adding DockerHub Credentials to Jenkins](<Screenshot%20(644).png>)
-![Adding GitHub Token to Jenkins](<Screenshot%20(648).png>)
-![Stored Jenkins Credentials Dashboard](<Screenshot%20(649).png>)
+![GitHub Token Generation](<assets/Screenshot%20(646).png>)
+![GitHub Token Permissions](<assets/Screenshot%20(647).png>)
+![Adding DockerHub Credentials to Jenkins](<assets/Screenshot%20(644).png>)
+![Adding GitHub Token to Jenkins](<assets/Screenshot%20(648).png>)
+![Stored Jenkins Credentials Dashboard](<assets/Screenshot%20(649).png>)
 
 ### 6. GitOps Deployment (ArgoCD) ⛴️
 
 Installing and configuring ArgoCD within the Kubernetes cluster.
-![ArgoCD Operator Overview](<Screenshot%20(640).png>)
-![Step-by-Step ArgoCD Installation](<Screenshot%20(641).png>)
-![ArgoCD CSV Verification](<Screenshot%20(643).png>)
-![ArgoCD Login Page](<Screenshot%20(659).png>)
-![ArgoCD Dashboard Ready](<Screenshot%20(660).png>)
-![Configuring ArgoCD App Source](<Screenshot%20(661).png>)
-![Application Syncing on ArgoCD](<Screenshot%20(663).png>)
+![ArgoCD Operator Overview](<assets/Screenshot%20(640).png>)
+![Step-by-Step ArgoCD Installation](<assets/Screenshot%20(641).png>)
+![ArgoCD CSV Verification](<assets/Screenshot%20(643).png>)
+![ArgoCD Login Page](<assets/Screenshot%20(659).png>)
+![ArgoCD Dashboard Ready](<assets/Screenshot%20(660).png>)
+![Configuring ArgoCD App Source](<assets/Screenshot%20(661).png>)
+![Application Syncing on ArgoCD](<assets/Screenshot%20(663).png>)
 
 ### 7. Cluster Validation & Troubleshooting 🛠️
 
 Verifying the state of pods, services, and manifests.
-![Editing ArgoCD Manifest](<Screenshot%20(654).png>)
-![CLI Troubleshooting Commands](<Screenshot%20(655).png>)
-![Kubernetes Resources Status](<Screenshot%20(656).png>)
-![Pods Running Successfully](<Screenshot%20(657).png>)
+![Editing ArgoCD Manifest](<assets/Screenshot%20(654).png>)
+![CLI Troubleshooting Commands](<assets/Screenshot%20(655).png>)
+![Kubernetes Resources Status](<assets/Screenshot%20(656).png>)
+![Pods Running Successfully](<assets/Screenshot%20(657).png>)
 
 ---
