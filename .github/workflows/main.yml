@@ -24,5 +24,5 @@ jobs:
 
     - name: Run tests
       run: |
-        cd src
+        cd Day42/src
         python -m pytest addition.py
