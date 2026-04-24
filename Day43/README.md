@@ -1,3 +1,5 @@
+![Progress](https://img.shields.io/badge/Progress-43%25-green?style=for-the-badge&logo=kubernetes)
+
 # Day 43: Linux Fundamentals & Setting Up a Containerized Workspace 🐧
 
 Welcome to Day 43 of my **100 Days of DevOps** journey! After spending the last few days building complex CI/CD pipelines and exploring GitOps, I decided it was time to pivot back to the absolute core of DevOps: **Linux OS Fundamentals**.
@@ -9,6 +11,7 @@ I am following Abhishek Veeramalla's "Ultimate Linux Guide" to solidify my under
 ### The OS Landscape: Linux vs. Windows
 
 Understanding the evolution from Unix (1960s) to modern Linux and Windows. We discussed why Linux dominates the server market (around 90% share). Its open-source nature, robust security model, and lack of licensing fees make it the industry standard over Windows Server for cloud infrastructure.
+
 ![Architecture & History](<assets/Screenshot%20(677).png>)
 
 ### Cost-Effectiveness
