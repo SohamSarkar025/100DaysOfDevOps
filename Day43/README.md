@@ -9,7 +9,7 @@ I am following Abhishek Veeramalla's "Ultimate Linux Guide" to solidify my under
 ### The OS Landscape: Linux vs. Windows
 
 Understanding the evolution from Unix (1960s) to modern Linux and Windows. We discussed why Linux dominates the server market (around 90% share). Its open-source nature, robust security model, and lack of licensing fees make it the industry standard over Windows Server for cloud infrastructure.
-![Architecture & History](<assets/Screenshot%20(677).jpg>)
+![Architecture & History](<assets/Screenshot%20(677).png>)
 
 ### Cost-Effectiveness
 
@@ -39,7 +39,7 @@ Before typing commands, it's crucial to understand what happens under the hood. 
 
   # Core components of a Linux Machine
 
-````plaintext
+```plaintext
 +----------------------------------------------------+
 | User Applications (Vim, Docker, Apache, etc.)     |
 +----------------------------------------------------+
@@ -82,7 +82,7 @@ Before typing commands, it's crucial to understand what happens under the hood. 
 
 🔹 End-user programs like web browsers, text editors, DevOps tools, etc.
 🔹 Applications interact with the OS using system calls via the shell or GUI.
-
+```
 
 ### Linux Distributions
 
@@ -104,14 +104,13 @@ Here are some popular Linux distributions:
 
     Alpine Linux – A lightweight, security-focused distro often used in containers.
 
-
 ### Useful References:
 
 - Linux Kernel Source code:
-http://git.kernel.org/
+  http://git.kernel.org/
 
 - Mirror of Linux Kernel on GitHub:
-http://github.com/torvalds/linux
+  http://github.com/torvalds/linux
 
 ---
 
@@ -141,7 +140,7 @@ docker run -dit `
   --env TZ=Asia/Kolkata `
   --env LANG=en_US.UTF-8 `
   ubuntu:latest /bin/bash
-````
+```
 
 ### Docker Command to Run Ubuntu Linux Container in mac or linux host (Persistent & Long-Term)
 
