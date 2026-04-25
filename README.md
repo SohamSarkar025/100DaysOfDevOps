@@ -83,7 +83,7 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 
 ## 🤝 Connect & Collaborate
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/soham-sarkar-85a5a6247)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/sohamsarkar000)
 
 ---
 
