@@ -168,8 +168,6 @@ ls -la
 19. **`echo 'Hello' > file.txt`** – Writes text to a file, overwriting existing content.
 20. **`echo 'Hello' >> file.txt`** – Appends text to a file without overwriting.
 
-```
-
 ![vi editor basics](<assets/Screenshot (709).png>)
 
 ---
@@ -179,8 +177,3 @@ ls -la
 The CLI is the language of the system. Mastering user & group management, file operations, and editors like `vi` makes you an effective operator.
 
 ---
-
-
-
-
-```
