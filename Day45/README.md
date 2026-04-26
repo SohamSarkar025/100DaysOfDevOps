@@ -6,114 +6,7 @@ Welcome to Day 45 of my **100 Days of DevOps** journey! Today I explored Linux u
 
 ---
 
-## 👥 1. User Management in Linux
-
-Linux is a multi-user OS — creating and managing users securely is critical for server security.
-
-### Creating Users and inspecting `/etc/passwd`
-
-I created a user named `Soham`, then inspected `/etc/passwd` to confirm the account entry.
-
-```bash
-sudo useradd Soham
-cat /etc/passwd
-```
-
-![User Management example](assets/Screenshot (705).png)
-
-### Setting a password and home directory troubleshooting
-
-Set a password for the new user:
-
-```bash
-sudo passwd Soham
-```
-
-If `su - Soham` fails because the home directory is missing, recreate the user with a home directory:
-
-```bash
-sudo userdel Soham
-sudo useradd -m Soham
-sudo su - Soham
-pwd  # should print /home/Soham
-```
-
-Passwords are stored as hashes in `/etc/shadow` and are readable only by root:
-
-```bash
-sudo cat /etc/shadow
-```
-
----
-
-## 🛡️ 2. Group Management
-
-Groups let you manage permissions for multiple users. I created a `Devops` group and added `Soham` to it.
-
-```bash
-sudo groupadd Devops
-sudo usermod -aG Devops Soham
-cat /etc/group
-```
-
-![Group Management example](assets/Screenshot (706).png)
-
-Note: always use `-aG` when adding a user to a supplementary group to avoid removing existing group memberships.
-
----
-
-## 📁 3. Basic File & Directory Operations
-
-Practiced common file operations in `/tmp`:
-
-- `mkdir` — create directories
-- `touch` — create files / update timestamps
-- `cp` — copy files
-- `mv` — move/rename files
-- `rm` — remove files
-
-Example:
-
-```bash
-cd /tmp
-mkdir devops-practice
-touch readme.txt
-cp readme.txt copy-readme.txt
-mv copy-readme.txt notes.txt
-ls -la
-```
-
-![File operations](assets/Screenshot (707).png)
-
----
-
-## 📝 4. Text Editing & Viewing
-
-The `vi` editor is available on almost every Unix-like system. Basic workflow:
-
-- Press `i` to enter insert mode
-- Type/edit text
-- Press `Esc` to return to normal mode
-- `:wq` to save and quit, `:q!` to quit without saving
-
-Viewing files without editing:
-
-```bash
-head -10 devops.txt   # view first 10 lines
-tail -5 devops.txt    # view last 5 lines
-```
-
-![vi editor basics](assets/Screenshot (709).png)
-
----
-
-## 💡 Key Takeaway
-
-The CLI is the language of the system. Mastering user & group management, file operations, and editors like `vi` makes you an effective operator.
-
----
-
-# User Management in Linux
+## User Management in Linux
 
 ## Introduction to User Management in Linux
 
@@ -157,6 +50,8 @@ adduser username
 ```
 
 This is an interactive command that asks for a password and additional details.
+
+![User Management example](<assets/Screenshot (705).png>)
 
 ## Managing User Passwords
 
@@ -212,61 +107,23 @@ To remove a user and their home directory:
 userdel -r username
 ```
 
-## Working with Groups
+---
 
-### Creating Groups
+## Group Management
 
-```bash
-groupadd groupname
-```
-
-### Adding Users to Groups
+Groups let you manage permissions for multiple users. I created a `Devops` group and added `Soham` to it.
 
 ```bash
-usermod -aG groupname username
+sudo groupadd Devops
+sudo usermod -aG Devops Soham
+cat /etc/group
 ```
 
-### Viewing Group Memberships
+![Group Management example](<assets/Screenshot (706).png>)
 
-```bash
-groups username
-```
+Note: always use `-aG` when adding a user to a supplementary group to avoid removing existing group memberships.
 
-### Changing Primary Group
-
-```bash
-usermod -g new_primary_group username
-```
-
-## Sudo Access and Privilege Escalation
-
-### Adding a User to Sudo Group
-
-On Debian-based systems:
-
-```bash
-usermod -aG sudo username
-```
-
-On RHEL-based systems:
-
-```bash
-usermod -aG wheel username
-```
-
-### Granting Specific Commands with Sudo
-
-Edit the sudoers file:
-
-```bash
-visudo
-```
-
-Then add:
-
-```bash
-username ALL=(ALL) NOPASSWD: /path/to/command
-```
+---
 
 # File management in Linux
 
@@ -283,6 +140,21 @@ username ALL=(ALL) NOPASSWD: /path/to/command
 9. **`cp -r dir1 dir2`** – Copies a directory recursively.
 10. **`mv old_name new_name`** – Moves or renames a file or directory.
 
+Example:
+
+```bash
+cd /tmp
+mkdir devops-practice
+touch readme.txt
+cp readme.txt copy-readme.txt
+mv copy-readme.txt notes.txt
+ls -la
+```
+
+![File operations](<assets/Screenshot (707).png>)
+
+---
+
 ### File Viewing and Editing
 
 11. **`cat file.txt`** – Displays file content.
@@ -295,3 +167,20 @@ username ALL=(ALL) NOPASSWD: /path/to/command
 18. **`vi file.txt`** – Opens a powerful text editor.
 19. **`echo 'Hello' > file.txt`** – Writes text to a file, overwriting existing content.
 20. **`echo 'Hello' >> file.txt`** – Appends text to a file without overwriting.
+
+```
+
+![vi editor basics](<assets/Screenshot (709).png>)
+
+---
+
+## 💡 Key Takeaway
+
+The CLI is the language of the system. Mastering user & group management, file operations, and editors like `vi` makes you an effective operator.
+
+---
+
+
+
+
+```
