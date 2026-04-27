@@ -10,7 +10,7 @@ Welcome to Day 46 of my **100 Days of DevOps** journey! After mastering User and
 
 In a corporate environment, you have multiple teams: Developers, QA (QE), and DevOps. You don't want a QA engineer accidentally modifying a critical production script written by a Developer. File permissions isolate access and protect system integrity.
 
-![Why Permissions Matter](<Screenshot (716).jpg>)
+![Why Permissions Matter](<Screenshot (716).png>)
 
 ### The Three Entities:
 Every file and directory in Linux has three levels of access:
@@ -23,7 +23,7 @@ Every file and directory in Linux has three levels of access:
 * **Write (`w`):** Modify or delete file contents.
 * **Execute (`x`):** Run the file as a script or program.
 
-![rwx Explained](<Screenshot (717).jpg>)
+![rwx Explained](<Screenshot (717).png>)
 
 ---
 
@@ -41,12 +41,12 @@ You add these numbers together for each entity (User, Group, Others).
 * `chmod 666 file`: (4+2 = 6) Everyone can read and write, but not execute.
 * `chmod 444 file`: (4) Read-only for everyone.
 
-![Numeric Notation Example](<Screenshot (718).jpg>)
+![Numeric Notation Example](<Screenshot (718).png>)
 
 **Symbolic vs Numeric:**
 Instead of numbers, you can also use symbols: `chmod u=rwx,g=rw,o=r file`. This is exactly equivalent to typing `chmod 764 file`.
 
-![Chmod 764 Example](<Screenshot (719).jpg>)
+![Chmod 764 Example](<Screenshot (719).png>)
 
 ---
 
@@ -58,7 +58,7 @@ Sometimes, you need to hand over a file to another user or group. We use the `ch
 
 *Learning Moment:* When I tried to run `chown qe:qe test.sh` as a regular user, Linux blocked it with an `Operation not permitted` error. **Only root/sudo** can change the ownership of a file to someone else! After switching to the root user, the command executed successfully, and `ls -ltr` confirmed the new owner.
 
-![Changing Ownership in Terminal](<Screenshot (720).jpg>)
+![Changing Ownership in Terminal](<Screenshot (720).png>)
 
 ---
 
@@ -69,7 +69,7 @@ Permissions act slightly differently on directories compared to files:
 * **Write (`w`) on a folder:** Allows you to create or delete files inside it.
 * **Execute (`x`) on a folder:** Allows you to `cd` into the folder. *(Without execute permissions, you can't even enter the directory!)*
 
-![Folder vs File Analogy](<Screenshot (721).jpg>)
+![Folder vs File Analogy](<Screenshot (721).png>)
 
 ---
 
