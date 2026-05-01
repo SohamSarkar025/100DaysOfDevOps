@@ -10,7 +10,7 @@ Today is a massive milestone—**Day 50 of 100!** 🚀 Having mastered the core 
 
 ## 🌟 Milestone Infographic: IAM Workflow Summary
 
-![AWS IAM Milestone Infographic](assets/Day50_IAM_Infographic.png)
+![AWS IAM Milestone Infographic](assets/Day50_IAM_Infographic.jpeg)
 
 ## 🏗️ 1. Core Components of IAM
 
