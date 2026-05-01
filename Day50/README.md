@@ -21,8 +21,6 @@ IAM allows us to manage access by creating four primary entities:
 3. **Policies:** JSON documents defining allowed/denied actions.
 4. **Roles:** Temporary credentials for AWS services or cross-account access.
 
-![IAM Core Workflow](<assets/Screenshot (778).png>)
-
 ---
 
 ## 🛠️ 2. Practical Lab: Building a Secure Identity Flow
