@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 57 | 100 Days of DevOps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --aws-orange: #ff9900;
+        --aws-dark: #0f1923;
+        --aws-deep: #070d14;
+        --aws-card: #121c27;
+        --aws-border: rgba(255, 153, 0, 0.18);
+        --aws-muted: #8a9bb0;
+        --aws-light: #c8d8e8;
+        --green: #00d68f;
+        --blue: #4fc3f7;
+        --red: #ff6b6b;
+        --radius: 16px;
+        --mono: "DM Mono", monospace;
+        --serif: "Instrument Serif", serif;
+        --display: "Syne", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--aws-deep);
+        color: var(--aws-light);
+        font-family: var(--display);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* ── NOISE OVERLAY ── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.6;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 2rem;
+        background: rgba(7, 13, 20, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--aws-border);
+      }
+
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--aws-orange);
+        letter-spacing: 0.1em;
+      }
+
+      .nav-badge {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        background: rgba(255, 153, 0, 0.12);
+        border: 1px solid var(--aws-border);
+        color: var(--aws-orange);
+        padding: 0.3rem 0.8rem;
+        border-radius: 100px;
+        letter-spacing: 0.06em;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav ul li a {
+        color: var(--aws-muted);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+
+      nav ul li a:hover {
+        color: var(--aws-orange);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8rem 2rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 153, 0, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 153, 0, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(
+          ellipse 80% 60% at 50% 50%,
+          black,
+          transparent
+        );
+      }
+
+      .hero-glow {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 153, 0, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      .hero-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--aws-orange);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards 0.1s;
+      }
+
+      .hero h1 {
+        font-family: var(--display);
+        font-size: clamp(3rem, 9vw, 7rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 0.2em;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards 0.25s;
+      }
+
+      .hero h1 span {
+        color: var(--aws-orange);
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .hero-sub {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        color: var(--aws-muted);
+        max-width: 560px;
+        margin: 1.5rem auto 2.5rem;
+        line-height: 1.7;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards 0.4s;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards 0.55s;
+      }
+
+      .btn-primary {
+        background: var(--aws-orange);
+        color: #000;
+        padding: 0.85rem 2rem;
+        border-radius: 100px;
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(255, 153, 0, 0.35);
+      }
+
+      .btn-outline {
+        border: 1px solid rgba(255, 153, 0, 0.4);
+        color: var(--aws-orange);
+        padding: 0.85rem 2rem;
+        border-radius: 100px;
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+        display: inline-block;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 153, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* ── SCROLL INDICATOR ── */
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards 1s;
+      }
+
+      .scroll-hint span {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        color: var(--aws-muted);
+        letter-spacing: 0.15em;
+      }
+
+      .scroll-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--aws-orange), transparent);
+        animation: scrollPulse 2s ease infinite;
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 6rem 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--aws-orange);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .section-label::after {
+        content: "";
+        flex: 1;
+        max-width: 60px;
+        height: 1px;
+        background: var(--aws-orange);
+        opacity: 0.4;
+      }
+
+      .section-title {
+        font-family: var(--display);
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+      }
+
+      .section-title em {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--aws-orange);
+      }
+
+      /* ── ARCHITECTURE CARD ── */
+      .arch-wrapper {
+        background: var(--aws-card);
+        border: 1px solid var(--aws-border);
+        border-radius: var(--radius);
+        padding: 2.5rem;
+        margin-top: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .arch-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 153, 0, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .arch-flow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .arch-node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        min-width: 100px;
+      }
+
+      .arch-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        position: relative;
+      }
+
+      .arch-icon.orange {
+        background: rgba(255, 153, 0, 0.15);
+        border: 1px solid rgba(255, 153, 0, 0.3);
+      }
+      .arch-icon.blue {
+        background: rgba(79, 195, 247, 0.12);
+        border: 1px solid rgba(79, 195, 247, 0.25);
+      }
+      .arch-icon.green {
+        background: rgba(0, 214, 143, 0.12);
+        border: 1px solid rgba(0, 214, 143, 0.25);
+      }
+
+      .arch-label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--aws-muted);
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+
+      .arch-arrow {
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 153, 0, 0.4);
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      /* ── STEPS ── */
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .step-card {
+        background: var(--aws-card);
+        border: 1px solid var(--aws-border);
+        border-radius: var(--radius);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.25s,
+          border-color 0.25s;
+      }
+
+      .step-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 153, 0, 0.4);
+      }
+
+      .step-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--aws-orange), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+
+      .step-card:hover::after {
+        transform: scaleX(1);
+      }
+
+      .step-num {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--aws-orange);
+        letter-spacing: 0.15em;
+        margin-bottom: 1rem;
+      }
+
+      .step-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.6rem;
+      }
+
+      .step-desc {
+        font-size: 0.9rem;
+        color: var(--aws-muted);
+        line-height: 1.65;
+      }
+
+      .step-code {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        background: rgba(255, 153, 0, 0.06);
+        border: 1px solid rgba(255, 153, 0, 0.15);
+        border-radius: 8px;
+        padding: 0.5rem 0.8rem;
+        color: var(--aws-orange);
+        margin-top: 1rem;
+        display: inline-block;
+      }
+
+      /* ── CONCEPTS ── */
+      .concepts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .concept-card {
+        background: var(--aws-card);
+        border: 1px solid var(--aws-border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        transition: transform 0.2s;
+      }
+
+      .concept-card:hover {
+        transform: translateY(-3px);
+      }
+
+      .concept-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .concept-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.4rem;
+      }
+
+      .concept-desc {
+        font-size: 0.82rem;
+        color: var(--aws-muted);
+        line-height: 1.6;
+      }
+
+      /* ── TERMINAL BLOCK ── */
+      .terminal {
+        background: #050a10;
+        border: 1px solid rgba(255, 153, 0, 0.2);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-top: 3rem;
+      }
+
+      .terminal-bar {
+        background: var(--aws-card);
+        padding: 0.8rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid rgba(255, 153, 0, 0.1);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .dot.r {
+        background: #ff5f57;
+      }
+      .dot.y {
+        background: #ffbd2e;
+      }
+      .dot.g {
+        background: #28ca40;
+      }
+
+      .terminal-title {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--aws-muted);
+        margin-left: auto;
+        letter-spacing: 0.08em;
+      }
+
+      .terminal-body {
+        padding: 1.5rem;
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        line-height: 2;
+      }
+
+      .t-prompt {
+        color: var(--green);
+      }
+      .t-cmd {
+        color: var(--aws-light);
+      }
+      .t-flag {
+        color: var(--blue);
+      }
+      .t-path {
+        color: var(--aws-orange);
+      }
+      .t-out {
+        color: var(--aws-muted);
+      }
+      .t-success {
+        color: var(--green);
+      }
+
+      /* ── STATS BAR ── */
+      .stats-bar {
+        background: var(--aws-card);
+        border-top: 1px solid var(--aws-border);
+        border-bottom: 1px solid var(--aws-border);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-num {
+        font-family: var(--display);
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--aws-orange);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--aws-muted);
+        letter-spacing: 0.1em;
+        margin-top: 0.3rem;
+      }
+
+      /* ── PROGRESS BAR ── */
+      .progress-section {
+        text-align: center;
+        padding: 4rem 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .progress-label {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--aws-muted);
+        letter-spacing: 0.12em;
+        margin-bottom: 1rem;
+      }
+
+      .progress-track {
+        background: rgba(255, 153, 0, 0.1);
+        border-radius: 100px;
+        height: 6px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        width: 57%;
+        background: linear-gradient(90deg, var(--aws-orange), #ffb84d);
+        border-radius: 100px;
+        animation: fillProgress 1.5s ease 0.5s both;
+      }
+
+      .progress-pct {
+        font-family: var(--display);
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--aws-orange);
+        line-height: 1;
+        margin: 0.8rem 0 0.3rem;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--aws-border);
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      footer p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--aws-muted);
+        letter-spacing: 0.08em;
+      }
+
+      footer a {
+        color: var(--aws-orange);
+        text-decoration: none;
+      }
+
+      /* ── DIVIDER ── */
+      .divider {
+        max-width: 1100px;
+        margin: 0 auto;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--aws-border),
+          transparent
+        );
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fillProgress {
+        from {
+          width: 0;
+        }
+        to {
+          width: 57%;
+        }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+
+        .arch-flow {
+          gap: 0.5rem;
+        }
+        .arch-arrow {
+          width: 24px;
+          font-size: 0.9rem;
+        }
+        .arch-icon {
+          width: 52px;
+          height: 52px;
+          font-size: 1.2rem;
+        }
+
+        .stats-bar {
+          gap: 2rem;
+        }
+
+        section {
+          padding: 4rem 1.2rem;
+        }
+
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+        .concepts-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .concepts-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">☁ soham // devops</div>
+      <ul>
+        <li><a href="#what">About</a></li>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+      </ul>
+      <div class="nav-badge">DAY 57 / 100</div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <p class="hero-eyebrow">100 Days of DevOps &bull; Day 57</p>
+      <h1>Hosting on<br /><span>Amazon S3</span></h1>
+      <p class="hero-sub">
+        Deployed a production-ready static website on AWS S3 with public access,
+        custom bucket policies, and static website hosting — zero servers,
+        infinite scale.
+      </p>
+      <div class="hero-cta">
+        <a href="#steps" class="btn-primary">View the Steps</a>
+        <a href="#concepts" class="btn-outline">Key Concepts</a>
+      </div>
+
+      <div class="scroll-hint">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">57</div>
+        <div class="stat-label">DAYS COMPLETE</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$0</div>
+        <div class="stat-label">SERVER COST</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">SCALABILITY</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">S3 AVAILABILITY</div>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <section id="what">
+      <div class="section-label">Architecture</div>
+      <h2 class="section-title">How S3 Static<br />Hosting <em>Works</em></h2>
+      <p style="color: var(--aws-muted); max-width: 560px; font-size: 0.95rem">
+        Amazon S3 serves your HTML, CSS, and JS files directly to browsers over
+        HTTP — no EC2, no load balancer, no maintenance. Just your files,
+        globally delivered.
+      </p>
+
+      <div class="arch-wrapper">
+        <p
+          style="
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--aws-muted);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+          "
+        >
+          TRAFFIC FLOW
+        </p>
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-icon blue">🌐</div>
+            <div class="arch-label">Browser<br />/ User</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-icon orange">🪣</div>
+            <div class="arch-label">S3 Bucket<br />(Public)</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-icon green">📄</div>
+            <div class="arch-label">index.html<br />/ Assets</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-icon blue">✅</div>
+            <div class="arch-label">Response<br />200 OK</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STEPS -->
+    <section id="steps">
+      <div class="section-label">Deployment</div>
+      <h2 class="section-title">Step-by-Step<br /><em>Setup Guide</em></h2>
+      <p style="color: var(--aws-muted); max-width: 560px; font-size: 0.95rem">
+        From zero to a live URL in 6 steps. Every configuration choice
+        explained.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">Create S3 Bucket</div>
+          <div class="step-desc">
+            Create a new S3 bucket with a globally unique name. The bucket name
+            becomes part of your website URL — choose it carefully.
+          </div>
+          <div class="step-code">aws s3 mb s3://your-site-name</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">Disable Block Public Access</div>
+          <div class="step-desc">
+            By default, S3 blocks all public access. Navigate to Permissions →
+            Block Public Access Settings and uncheck all four options to allow
+            public reads.
+          </div>
+          <div class="step-code">Permissions → Unblock All</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">Enable Static Hosting</div>
+          <div class="step-desc">
+            Under Properties → Static Website Hosting, enable it, set index.html
+            as the index document and error.html as the error document.
+          </div>
+          <div class="step-code">Properties → Static Hosting → Enable</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">Attach Bucket Policy</div>
+          <div class="step-desc">
+            Add a resource-based policy granting s3:GetObject permission to all
+            principals (*). This is what makes your files publicly readable over
+            HTTP.
+          </div>
+          <div class="step-code">"Effect": "Allow", "Principal": "*"</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 05</div>
+          <div class="step-title">Upload Website Files</div>
+          <div class="step-desc">
+            Upload your index.html, CSS, JS, and any image assets to the bucket
+            root. Set the correct Content-Type metadata for each file type.
+          </div>
+          <div class="step-code">aws s3 sync ./site s3://your-site</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">STEP 06</div>
+          <div class="step-title">Access Your Live URL</div>
+          <div class="step-desc">
+            Copy the S3 website endpoint from Properties. Your site is now live
+            at the public URL — no DNS, no servers, no configuration headaches.
+          </div>
+          <div class="step-code">bucket.s3-website-region.amazonaws.com</div>
+        </div>
+      </div>
+
+      <!-- TERMINAL -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot r"></div>
+          <div class="dot y"></div>
+          <div class="dot g"></div>
+          <div class="terminal-title">aws-cli — bash</div>
+        </div>
+        <div class="terminal-body">
+          <div>
+            <span class="t-prompt">$</span> <span class="t-cmd">aws s3 mb</span>
+            <span class="t-path">s3://day57-devops-site</span>
+          </div>
+          <div><span class="t-out">make_bucket: day57-devops-site</span></div>
+          <br />
+          <div>
+            <span class="t-prompt">$</span>
+            <span class="t-cmd">aws s3 website</span>
+            <span class="t-path">s3://day57-devops-site</span>
+            <span class="t-flag">--index-document</span>
+            <span class="t-path">index.html</span>
+            <span class="t-flag">--error-document</span>
+            <span class="t-path">error.html</span>
+          </div>
+          <br />
+          <div>
+            <span class="t-prompt">$</span>
+            <span class="t-cmd">aws s3 sync</span>
+            <span class="t-path">./website</span>
+            <span class="t-path">s3://day57-devops-site</span>
+            <span class="t-flag">--acl public-read</span>
+          </div>
+          <div>
+            <span class="t-out"
+              >upload: website/index.html →
+              s3://day57-devops-site/index.html</span
+            >
+          </div>
+          <div>
+            <span class="t-out"
+              >upload: website/style.css →
+              s3://day57-devops-site/style.css</span
+            >
+          </div>
+          <div>
+            <span class="t-out"
+              >upload: website/assets/... →
+              s3://day57-devops-site/assets/...</span
+            >
+          </div>
+          <br />
+          <div>
+            <span class="t-success"
+              >✓ Site live at:
+              http://day57-devops-site.s3-website-us-east-1.amazonaws.com</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONCEPTS -->
+    <section id="concepts">
+      <div class="section-label">Key Concepts</div>
+      <h2 class="section-title">What I <em>Learned</em><br />Today</h2>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon">🪣</div>
+          <div class="concept-title">S3 Bucket</div>
+          <div class="concept-desc">
+            A container for objects in S3. Globally unique name,
+            region-specific. The root of all static hosting.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">🔓</div>
+          <div class="concept-title">Bucket Policy</div>
+          <div class="concept-desc">
+            JSON resource policy controlling who can perform which actions on
+            which S3 objects. Essential for public read access.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">🌍</div>
+          <div class="concept-title">Static Hosting</div>
+          <div class="concept-desc">
+            S3 feature that serves files as a website over HTTP. Defines index
+            and error documents. Free endpoint included.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">🛡️</div>
+          <div class="concept-title">Block Public Access</div>
+          <div class="concept-desc">
+            Account-level and bucket-level safety toggle that overrides all
+            public access grants — must be disabled for hosting.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">📦</div>
+          <div class="concept-title">Object Storage</div>
+          <div class="concept-desc">
+            S3 stores files as flat objects with metadata — not a filesystem.
+            Each object has a unique key (path) within a bucket.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">⚡</div>
+          <div class="concept-title">Serverless Delivery</div>
+          <div class="concept-desc">
+            No EC2, no web server software, no OS patches. AWS manages all
+            infrastructure. You pay only per GB stored and per request.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">🔗</div>
+          <div class="concept-title">S3 Endpoint URL</div>
+          <div class="concept-desc">
+            Auto-generated URL in format:
+            bucket.s3-website-region.amazonaws.com. Point a custom domain via
+            Route 53 CNAME.
+          </div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">📋</div>
+          <div class="concept-title">Content-Type Header</div>
+          <div class="concept-desc">
+            S3 serves the exact Content-Type you set at upload. text/html for
+            pages, text/css for styles, image/png for images.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <div class="progress-section">
+      <div class="progress-label">CHALLENGE PROGRESS</div>
+      <div class="progress-pct">57%</div>
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+      <p
+        style="
+          font-family: var(--mono);
+          font-size: 0.72rem;
+          color: var(--aws-muted);
+          margin-top: 0.8rem;
+          letter-spacing: 0.08em;
+        "
+      >
+        57 OF 100 DAYS COMPLETED &bull; 43 REMAINING
+      </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        Hosted on <a href="#">Amazon S3</a> &bull; Built during
+        <a href="#">#100DaysOfDevOps</a> &bull; Day 57 &bull; &copy; 2026
+      </p>
+    </footer>
+  </body>
+</html>
