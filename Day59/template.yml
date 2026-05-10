@@ -1,0 +1,7 @@
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: "soham-devops-lab-bucket" # Bucket name globally unique hona chahiye
+      VersioningConfiguration:
+        Status: Enabled
