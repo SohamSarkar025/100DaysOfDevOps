@@ -87,6 +87,20 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 | **45** | **User Management**          | UID/GID, /etc/passwd, /etc/shadow, and Vi Editor mastery     | [Day 45](./Day45)  |
 | **46** | **File Permissions**         | Access Control (chmod 4-2-1), chown, and Security PoLP       | [Day 46](./Day46)  |
 | **47** | **Process & Disk Mgmt**      | PS/Kill, Systemctl Services, and AWS EBS Volume Mounting     | [Day 47](./Day47)  |
+| **48** | **AWS Networking**           | OSI Model, IP Addressing, and Subnetting Fundamentals        | [Day 48](./Day48)  |
+| **49** | **Cloud Computing**          | Deployment Models (Public/Private/Hybrid) & Service Models   | [Day 49](./Day49)  |
+| **50** | **AWS Deep Dive**            | Halfway Milestone: Reviewing core global infrastructure      | [Day 50](./Day50)  |
+| **51** | **Amazon EC2**               | Instance families, purchasing options, and hands-on lab      | [Day 51](./Day51)  |
+| **52** | **VPC Architecture**         | Custom VPC, Subnets, Internet Gateways, and CIDR planning    | [Day 52](./Day52)  |
+| **53** | **Network Security**         | Security Groups vs NACLs, Stateful vs Stateless rules        | [Day 53](./Day53)  |
+| **54** | **AWS Route 53**             | DNS Management, Routing Policies, and Domain setup           | [Day 54](./Day54)  |
+| **55** | **High Availability**        | HA Production VPC with ASG, ALB, and Multi-AZ setup          | [Day 55](./Day55)  |
+| **56** | **Interview Prep**           | Top AWS VPC & IAM Interview Q&A and technical notes          | [Day 56](./Day56)  |
+| **57** | **Amazon S3**                | Static hosting, bucket policies, and versioning lab          | [Day 57](./Day57)  |
+| **58** | **AWS CLI Automation**       | Automated EC2 lifecycle script and FinOps billing reports    | [Day 58](./Day58)  |
+| **59** | **CloudFormation**           | IaC deep dive, YAML templates, and S3 Stack Lab              | [Day 59](./Day59)  |
+| **60** | **AWS CodeCommit**           | Managed Git, IAM PowerUser access, and CI/CD Source stage    | [Day 60](./Day60)  |
+| **61** | **AWS CodeBuild**            | Python App CI/CD, BuildSpec.yml, and Docker Automation       | [Day 61](./Day61)  |
 
 ---
 
