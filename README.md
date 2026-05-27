@@ -101,20 +101,20 @@ If you are a **Recruiter**, a **Mentor**, or a **Fellow Learner**, here is why y
 | **59**  | **CloudFormation**             | IaC deep dive, YAML templates, and S3 Stack Lab                                 | [Day 59](./Day59)  |
 | **60**  | **AWS CodeCommit**             | Managed Git, IAM PowerUser access, and CI/CD Source stage                       | [Day 60](./Day60)  |
 | **61**  | **AWS CodeBuild**              | Python App CI/CD, BuildSpec.yml, and Docker Automation                          | [Day 61](./Day61)  |
-| **#62** | **AWS CodeDeploy**             | Complete CodeDeploy integration with IAM EC2 Roles & AppSpec configurations     | [Day 62](./Day62)  |
-| **#63** | **Amazon CloudWatch**          | CloudWatch Logs monitoring lab with custom Python SDK/Boto3 integration         | [Day 63](./Day63)  |
-| **#64** | **Serverless Compute**         | Deploying serverless Python functions inside AWS Lambda architecture            | [Day 64](./Day64)  |
-| **#65** | **Automated Cleanups**         | Automated EBS Snapshot retention cleaner using Lambda & EventBridge             | [Day 65](./Day65)  |
-| **#66** | **CloudFront CDN**             | Static website content hosting optimization via S3 Origin Secure Policies       | [Day 66](./Day66)  |
-| **#67** | **Amazon ECR**                 | Configuring private Docker registries and automating image pushes               | [Day 67](./Day67)  |
-| **#68** | **Amazon ECS Fargate**         | Running containerized Flask microservices inside serverless clusters            | [Day 68](./Day68)  |
-| **#69** | **Terraform Core IaC**         | Provisioning a highly available multi-AZ stack with custom VPC & ALB tiers      | [Day 69](./Day69)  |
-| **#70** | **AWS Config Custom**          | Enterprise Cloud Governance auditing via customized Boto3 Lambda rules          | [Day 70](./Day70)  |
-| **#71** | **AWS Elastic Load Balancers** | Complete deep dive across ALB (L7), NLB (L4), and GWLB (L3) network segments    | [Day 71](./Day71)  |
-| **#72** | **Enterprise Migration**       | Cloud Transformation frameworks: Analyzing the 5 Phases and the 7 R's Matrix    | [Day 72](./Day72)  |
-| **#73** | **Terraform First Steps**      | Declaring cloud provider graphs and initializing first standalone EC2 files     | [Day 73](./Day73)  |
+| **62**  | **AWS CodeDeploy**             | Complete CodeDeploy integration with IAM EC2 Roles & AppSpec configurations     | [Day 62](./Day62)  |
+| **63**  | **Amazon CloudWatch**          | CloudWatch Logs monitoring lab with custom Python SDK/Boto3 integration         | [Day 63](./Day63)  |
+| **64**  | **Serverless Compute**         | Deploying serverless Python functions inside AWS Lambda architecture            | [Day 64](./Day64)  |
+| **65**  | **Automated Cleanups**         | Automated EBS Snapshot retention cleaner using Lambda & EventBridge             | [Day 65](./Day65)  |
+| **66**  | **CloudFront CDN**             | Static website content hosting optimization via S3 Origin Secure Policies       | [Day 66](./Day66)  |
+| **67**  | **Amazon ECR**                 | Configuring private Docker registries and automating image pushes               | [Day 67](./Day67)  |
+| **68**  | **Amazon ECS Fargate**         | Running containerized Flask microservices inside serverless clusters            | [Day 68](./Day68)  |
+| **69**  | **Terraform Core IaC**         | Provisioning a highly available multi-AZ stack with custom VPC & ALB tiers      | [Day 69](./Day69)  |
+| **70**  | **AWS Config Custom**          | Enterprise Cloud Governance auditing via customized Boto3 Lambda rules          | [Day 70](./Day70)  |
+| **71**  | **AWS Elastic Load Balancers** | Complete deep dive across ALB (L7), NLB (L4), and GWLB (L3) network segments    | [Day 71](./Day71)  |
+| **72**  | **Enterprise Migration**       | Cloud Transformation frameworks: Analyzing the 5 Phases and the 7 R's Matrix    | [Day 72](./Day72)  |
+| **73**  | **Terraform First Steps**      | Declaring cloud provider graphs and initializing first standalone EC2 files     | [Day 73](./Day73)  |
 | **#74** | **HCL Logic and Variables**    | Environment handling via `.tfvars`, ternary expressions, and built-in functions | [Day 74](./Day74)  |
-| **#75** | **Terraform Modules**          | Decoupling infrastructure footprints into reusable custom code components       | [Day 75](./Day75)  |
+| **75**  | **Terraform Modules**          | Decoupling infrastructure footprints into reusable custom code components       | [Day 75](./Day75)  |
 
 ---
 
